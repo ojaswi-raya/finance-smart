@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Feedback</h2>
+<form action="{{ url_for('feedback') }}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" required></textarea>
+    <button type="submit">Submit Feedback</button>
+</form>
+
+<h3>Feedback Received:</h3>
+<ul>
+    {% for feedback in feedback %}
+        <li><strong>{{ feedback.name }}</strong>: {{ feedback.comments }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

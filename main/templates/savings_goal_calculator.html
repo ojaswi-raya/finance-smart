@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Savings Goal Calculator</h2>
+<form method="POST">
+    <label for="goal_amount">Savings Goal Amount:</label>
+    <input type="number" id="goal_amount" name="goal_amount" required>
+    
+    <label for="monthly_savings">Monthly Savings:</label>
+    <input type="number" id="monthly_savings" name="monthly_savings" required>
+    
+    <button type="submit">Calculate</button>
+</form>
+{% if months_needed is not none %}
+    <p>Months Needed: {{ months_needed }}</p>
+{% endif %}
+{% endblock %}

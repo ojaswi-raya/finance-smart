@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Scholarship Calculator</h2>
+<form method="POST">
+    <label for="scholarship_amount">Scholarship Amount:</label>
+    <input type="number" id="scholarship_amount" name="scholarship_amount" required>
+    
+    <label for="total_expenses">Total Expenses:</label>
+    <input type="number" id="total_expenses" name="total_expenses" required>
+    
+    <button type="submit">Calculate</button>
+</form>
+{% if remaining_expenses is not none %}
+    <p>Remaining Expenses: {{ remaining_expenses }}</p>
+{% endif %}
+{% endblock %}

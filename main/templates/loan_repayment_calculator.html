@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Loan Repayment Calculator</h2>
+<form method="POST">
+    <label for="principal">Principal:</label>
+    <input type="number" id="principal" name="principal" required>
+    
+    <label for="rate">Annual Interest Rate (%):</label>
+    <input type="number" step="0.01" id="rate" name="rate" required>
+    
+    <label for="term">Term (Years):</label>
+    <input type="number" id="term" name="term" required>
+    
+    <button type="submit">Calculate</button>
+</form>
+{% if monthly_payment is not none %}
+    <p>Monthly Payment: {{ monthly_payment }}</p>
+    <p>Total Repayment: {{ total_payment }}</p>
+{% endif %}
+{% endblock %}
